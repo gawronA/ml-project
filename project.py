@@ -36,7 +36,7 @@ df_pred_train = forest_.transform(df_train)
 
 evaluator = evaluation.MulticlassClassificationEvaluator(metricName='accuracy', labelCol='class')
 result = evaluator.evaluate(df_pred_train)
-print('\nPrawdopodobieństwo poprawneo sklasyfikowania rodzaju nowotworu: {result:.2f}%\n'.format(result=result*100))
+print('\nPrawdopodobieństwo poprawnego sklasyfikowania rodzaju nowotworu: {result:.2f}%\n'.format(result=result*100))
 
 df_test = feat_vect.transform(df_test).select('class', 'feat')
 df_test = scaler_.transform(df_test)
